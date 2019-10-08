@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Encryption_Task13
 {
-    class Encryptor
+    internal class Encryptor
     {
         public string Generate_Pseudorandom_KeyWord(int length, int startSeed, List<char> alphabet)
         {
@@ -33,7 +29,6 @@ namespace Encryption_Task13
             return r.Substring(0, n);
         }
 
-
         private string Cipher(string text, string secretKey)
         {
             var currentKey = GetRepeatKey(secretKey, text.Length);
@@ -46,13 +41,10 @@ namespace Encryption_Task13
             return res;
         }
 
-
         public string Encrypt(string plainText, string password)
             => Cipher(plainText, password);
-
 
         public string Decrypt(string encryptedText, string password)
             => Cipher(encryptedText, password);
     }
 }
-
